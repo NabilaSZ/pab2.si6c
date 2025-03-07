@@ -18,12 +18,12 @@ class Movie {
   factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
       id: json['id'],
-      title: json['title'],
-      overview: json['overview'],
-      posterPath: json['poster_path'],
-      backdropPath: json['backdrop_path'],
-      releaseDate: json['release_date'],
-      voteAverage: json['vote_average'].toDouble(),
+      title: json['title']?? 'No Title',
+      overview: json['overview'] ?? 'No Overview',
+      posterPath: json['poster_path'] ??'none',
+      backdropPath: json['backdrop_path'] ?? 'none',
+      releaseDate: json['release_date'] ?? 'No Release Date',
+      voteAverage: (json['vote_average'] ?? 0 ).toDouble(),
     );
   }
   Map<String, dynamic> toJson() {

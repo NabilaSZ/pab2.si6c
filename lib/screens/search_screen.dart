@@ -94,12 +94,15 @@ class SearchScreenState extends State<SearchScreen> {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4),
                     child: ListTile(
-                      leading: Image.network(
-
-                        'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                      leading: SizedBox(
                         height: 50,
                         width: 50,
-                        fit: BoxFit.cover,
+                        child: Image.network(
+                          movie.posterPath != 'none'
+                          ? 'https://image.tmdb.org/t/p/w500${movie.posterPath}'
+                          :'https://fakeimg.pl/400x400?text=No+Image',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       title: Text(movie.title),
                       onTap: () {

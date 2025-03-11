@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-
 import '../models/movie.dart';
 import 'detail_screen.dart';
+
 class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});
   @override
@@ -67,24 +66,12 @@ class FavoriteScreenState extends State<FavoriteScreen> {
                   MaterialPageRoute(
                     builder: (context) => DetailScreen(movie: movie),
                   ),
-
-                )
-                ;
-              }
-              ,
-
-            )
-            ,
-
-          )
-          ;
-        }
-        ,
-
-      )
-      ,
-
-    )
-    ;
+                );
+              },
+            ),
+          );
+          },
+      ),
+    );
   }
 }
